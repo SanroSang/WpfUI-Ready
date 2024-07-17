@@ -1,0 +1,72 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net4.7.2-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\img\free1.png" />
+    <None Remove="Resources\img\free2.png" />
+    <None Remove="Resources\img\free3.png" />
+    <None Remove="Resources\img\icon.ico" />
+    <None Remove="Resources\img\test.png" />
+    <None Remove="Resources\img\test1.png" />
+    <None Remove="Resources\img\test2.png" />
+    <None Remove="Resources\img\test3.png" />
+    <None Remove="Resources\img\test4.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\img\free1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\img\free2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\img\free3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\img\icon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\img\test1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\img\test.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\img\test2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\img\test3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\img\test4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Views\BlurView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ItemsListView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Resources\Styles\Fonts\" />
+    <Folder Include="Resources\Styles\Theme\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Wpf.Ui">
+      <HintPath>..\wpf-ui-dll\3.0.4\lib\net462\Wpf.Ui.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

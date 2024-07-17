@@ -1,0 +1,86 @@
+﻿<UserControl x:Class="WpfApp3.StatisticsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             xmlns:local="clr-namespace:WpfApp3"
+             mc:Ignorable="d" 
+             ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
+             ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="#ffffff" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- 主要内容 -->
+        <Border
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            Grid.Column="1"
+            Margin="8"
+            BorderBrush="#ffffff"
+            BorderThickness="3"
+            CornerRadius="8" Background="#ffffff">
+                <ui:DataGrid ItemsSource="{Binding ProductsCollection2, Mode=TwoWay}" Margin="15"  Background="#ffffff"/>
+            <Border.Effect >
+                <DropShadowEffect ShadowDepth="0" BlurRadius="2" Color="Black" Opacity="0.3"/>
+            </Border.Effect>
+        </Border>
+        
+        <Border
+            Grid.Row="0"
+            Grid.Column="0"
+            Margin="8"
+            BorderBrush="#ffffff"
+            BorderThickness="3"
+            CornerRadius="8" >
+
+            <ListBox SelectedIndex="0" Margin="15"  Panel.ZIndex="2">
+                <ListBoxItem>Blue</ListBoxItem>
+                <ListBoxItem>Green</ListBoxItem>
+                <ListBoxItem>Red</ListBoxItem>
+                <ListBoxItem>Yellow</ListBoxItem>
+            </ListBox>
+            <Border.Effect >
+                <DropShadowEffect ShadowDepth="0" BlurRadius="2" Color="Black"  Opacity="0.3"/>
+            </Border.Effect>
+        </Border>
+        
+        <Border
+            Grid.Row="1"
+            Grid.Column="0"
+            Margin="8"
+            BorderBrush="#ffffff"
+            BorderThickness="3"
+            CornerRadius="8" >
+            <TreeView AllowDrop="True" ScrollViewer.CanContentScroll="False" Margin="15"> 
+                <TreeViewItem
+                    Header="Work Documents"
+                    IsExpanded="True"
+                    IsSelected="True">
+                    <TreeViewItem Header="Feature Schedule" />
+                    <TreeViewItem Header="Overall Project Plan" />
+                </TreeViewItem>
+                <TreeViewItem Header="Personal Documents">
+                    <TreeViewItem Header="Contractor contact info" />
+                    <TreeViewItem Header="Home Remodel">
+                        <TreeViewItem Header="Paint Color Scheme" />
+                        <TreeViewItem Header="Flooring Woodgrain Type" />
+                        <TreeViewItem Header="Kitchen Cabinet Style" />
+                    </TreeViewItem>
+                </TreeViewItem>
+            </TreeView>
+            <Border.Effect >
+                <DropShadowEffect ShadowDepth="0" BlurRadius="2" Color="Black" Opacity="0.3"/>
+            </Border.Effect>
+        </Border>
+        
+    </Grid>
+</UserControl>

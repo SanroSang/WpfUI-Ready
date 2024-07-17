@@ -1,0 +1,452 @@
+﻿<Window x:Class="WpfApp3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp3"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+        mc:Ignorable="d"  
+        Icon="/Resources/img/icon.ico"
+        d:DataContext="{d:DesignInstance local:MainViewModel,IsDesignTimeCreatable=False}"
+        ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
+        ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+        Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+        Title="xxxx智能分析仪 Version1.2.0" Height="760" Width="1200" 
+        >
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="10" ResizeBorderThickness="10"  />
+    </WindowChrome.WindowChrome>
+
+    <Grid >
+        <!-- Top Row: Placeholders for future content -->
+        <Grid.RowDefinitions >
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="3,3,0,0" VerticalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Menu FontSize="14"  Grid.Row="0" HorizontalAlignment="Right" Margin="8,8,15,0">
+                <ui:MenuItem Icon="{ui:SymbolIcon Subtract24}"  Margin="0,0,5,0"  Click="Mini_Click"/>
+                <ui:MenuItem Icon="{ui:SymbolIcon Square32}"  Name="MaxOrNormalButton"  Margin="0,0,5,0" Click="MaxOrNormal_Click"/>
+                <ui:MenuItem Icon="{ui:SymbolIcon Dismiss12}"  Click="Close_Click"/>
+            </Menu>
+            
+            <Menu FontSize="14"  Grid.Row="1" HorizontalAlignment="Left" Margin="8,-45,0,0">
+                <ui:MenuItem Header="文件" Icon="{ui:SymbolIcon DocumentSplitHint20}">
+                    <ui:MenuItem Header="编辑" Icon="{ui:SymbolIcon DocumentEdit20}">
+                        <MenuItem Header="Undo" />
+                        <Separator />
+                        <MenuItem Header="Cut" />
+                        <MenuItem Header="Copy" />
+                        <MenuItem Header="Paste" />
+                        <MenuItem IsEnabled="False" />
+                        <Separator />
+                        <MenuItem Header="Search with browser" />
+                        <MenuItem Header="Find..." />
+                        <MenuItem Header="Find next" />
+                        <Separator />
+                        <MenuItem Header="Select All" />
+                    </ui:MenuItem>
+                    <ui:MenuItem Header="编辑" Icon="{ui:SymbolIcon DocumentEdit20}">
+                        <MenuItem Header="Undo" />
+                        <Separator />
+                        <MenuItem Header="Cut" />
+                        <MenuItem Header="Copy" />
+                        <MenuItem Header="Paste" />
+                        <MenuItem IsEnabled="False" />
+                        <Separator />
+                        <MenuItem Header="Search with browser" />
+                        <MenuItem Header="Find..." />
+                        <MenuItem Header="Find next" />
+                        <Separator />
+                        <MenuItem Header="Select All" />
+                    </ui:MenuItem>
+                    <MenuItem Header="Save" />
+                    <MenuItem Header="Save As..." />
+                    <Separator />
+                    <MenuItem Header="Exit" />
+                </ui:MenuItem>
+                <ui:MenuItem Header="编辑" Icon="{ui:SymbolIcon DocumentEdit20}">
+                    <MenuItem Header="Undo" />
+                    <Separator />
+                    <MenuItem Header="Cut" />
+                    <MenuItem Header="Copy" />
+                    <MenuItem Header="Paste" />
+                    <MenuItem IsEnabled="False" />
+                    <Separator />
+                    <MenuItem Header="Search with browser" />
+                    <MenuItem Header="Find..." />
+                    <MenuItem Header="Find next" />
+                    <Separator />
+                    <MenuItem Header="Select All" />
+                </ui:MenuItem>
+                <ui:MenuItem Header="视图" Icon="{ui:SymbolIcon WindowSettings20}">
+                    <MenuItem Header="New" />
+                    <MenuItem Header="New window" />
+                    <MenuItem Header="Open..." />
+                    <MenuItem Header="Save" />
+                    <MenuItem Header="Save As..." />
+                    <Separator />
+                    <MenuItem Header="Exit" />
+                </ui:MenuItem>
+                <ui:MenuItem Header="工具" Icon="{ui:SymbolIcon DocumentEdit20}">
+                    <MenuItem Header="Undo" />
+                    <Separator />
+                    <MenuItem Header="Cut" />
+                    <MenuItem Header="Copy" />
+                    <MenuItem Header="Paste" />
+                    <MenuItem IsEnabled="False" />
+                    <Separator />
+                    <MenuItem Header="Search with browser" />
+                    <MenuItem Header="Find..." />
+                    <MenuItem Header="Find next" />
+                    <Separator />
+                    <MenuItem Header="Select All" />
+                </ui:MenuItem>
+                <ui:MenuItem Header="扩展" Icon="{ui:SymbolIcon DocumentSplitHint20}">
+                    <MenuItem Header="New" />
+                    <MenuItem Header="New window" />
+                    <MenuItem Header="Open..." />
+                    <MenuItem Header="Save" />
+                    <MenuItem Header="Save As..." />
+                    <Separator />
+                    <MenuItem Header="Exit" />
+                </ui:MenuItem>
+                <ui:MenuItem Header="窗口" Icon="{ui:SymbolIcon DocumentEdit20}">
+                    <MenuItem Header="Undo" />
+                    <Separator />
+                    <MenuItem Header="Cut" />
+                    <MenuItem Header="Copy" />
+                    <MenuItem Header="Paste" />
+                    <MenuItem IsEnabled="False" />
+                    <Separator />
+                    <MenuItem Header="Search with browser" />
+                    <MenuItem Header="Find..." />
+                    <MenuItem Header="Find next" />
+                    <Separator />
+                    <MenuItem Header="Select All" />
+                </ui:MenuItem>
+                <ui:MenuItem Header="授权" Icon="{ui:SymbolIcon DocumentSplitHint20}">
+                    <MenuItem Header="New" />
+                    <MenuItem Header="New window" />
+                    <MenuItem Header="Open..." />
+                    <MenuItem Header="Save" />
+                    <MenuItem Header="Save As..." />
+                    <Separator />
+                    <MenuItem Header="Exit" />
+                </ui:MenuItem>
+                <ui:MenuItem Header="官网" Icon="{ui:SymbolIcon DocumentEdit20}">
+                    <MenuItem Header="Undo" />
+                    <Separator />
+                    <MenuItem Header="Cut" />
+                    <MenuItem Header="Copy" />
+                    <MenuItem Header="Paste" />
+                    <MenuItem IsEnabled="False" />
+                    <Separator />
+                    <MenuItem Header="Search with browser" />
+                    <MenuItem Header="Find..." />
+                    <MenuItem Header="Find next" />
+                    <Separator />
+                    <MenuItem Header="Select All" />
+                </ui:MenuItem>
+                <ui:MenuItem Header="售后" Icon="{ui:SymbolIcon DocumentSplitHint20}">
+                    <MenuItem Header="New" />
+                    <MenuItem Header="New window" />
+                    <MenuItem Header="Open..." />
+                    <MenuItem Header="Save" />
+                    <MenuItem Header="Save As..." />
+                    <Separator />
+                    <MenuItem Header="Exit" />
+                </ui:MenuItem>
+               
+                <Separator />
+                <ui:MenuItem Icon="{ui:SymbolIcon TextBold20}" />
+                <ui:MenuItem Icon="{ui:SymbolIcon TextItalic20}" />
+                <ui:MenuItem Icon="{ui:SymbolIcon TextUnderline20}" />
+                <ui:MenuItem Icon="{ui:SymbolIcon BookStar20}" />
+             
+            </Menu>
+
+            <Menu FontSize="14"  Grid.Row="2" Margin="8,0,0,0">
+                <ui:MenuItem Icon="{ui:SymbolIcon BookStar20}" />
+                <ui:MenuItem Icon="{ui:SymbolIcon BookSearch20}" />
+                <ui:MenuItem Icon="{ui:SymbolIcon Battery1024}" />
+                <Separator />
+
+                <ui:MenuItem Icon="{ui:SymbolIcon BookStar20}" />
+                <ui:MenuItem Icon="{ui:SymbolIcon BookSearch20}" />
+                <ui:MenuItem Icon="{ui:SymbolIcon Battery1024}" />
+                <Separator />
+
+                <ui:MenuItem Icon="{ui:SymbolIcon BookStar20}" />
+                <ui:MenuItem Icon="{ui:SymbolIcon BookSearch20}" />
+                <ui:MenuItem Icon="{ui:SymbolIcon Battery1024}" />
+                <Separator />
+                <ui:MenuItem Icon="{ui:SymbolIcon TextItalic20}" />
+                <ui:MenuItem Icon="{ui:SymbolIcon TextUnderline20}" />
+                <ui:MenuItem Icon="{ui:SymbolIcon BookStar20}" />
+                <ui:MenuItem Icon="{ui:SymbolIcon BookSearch20}" />
+                <ui:MenuItem Icon="{ui:SymbolIcon Battery1024}" />
+
+            </Menu>
+        </Grid>
+
+        <!-- Middle Row: NavigationView -->
+        <Grid Grid.Row="1" Margin="8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="50" />
+            </Grid.ColumnDefinitions>
+
+            <ui:NavigationView IsBackButtonVisible="Visible" PaneTitle="菜单" 
+                               PaneDisplayMode="Left" Grid.Column="0" Margin="0,0,0,0">
+                
+                <!--<ui:NavigationView.Header>
+                        <Border
+                    Margin="8"
+                    Background="{DynamicResource StripedBackgroundBrush}"
+                    CornerRadius="4">
+                        <TextBlock
+                        Margin="24"
+                        VerticalAlignment="Center"
+                        FontWeight="Medium"
+                        Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}"
+                        Text="NavigationView Header" />
+                    </Border>
+                </ui:NavigationView.Header>-->
+
+                <ui:NavigationView.PaneHeader>
+                    <Border
+                        Margin="0,0,0,8"
+                        Background="{DynamicResource StripedBackgroundBrush}"
+                        CornerRadius="4">
+                        <TextBlock
+                            Margin="24"
+                            VerticalAlignment="Center"
+                            FontWeight="Medium"
+                            Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}"
+                            Text="Pane Header" 
+                            />
+                    </Border>
+                </ui:NavigationView.PaneHeader>
+
+                <ui:NavigationView.MenuItems>
+                    <ui:AutoSuggestBox PlaceholderText="搜索..." Margin="0,10,0,10" />
+                    <Separator />
+                    <ui:NavigationViewItem x:Name="home" Content="菜单一" 
+                                           Icon="{ui:SymbolIcon Home24}" 
+                                           Tag="Home" Margin="0,0,0,0" 
+                                           TargetPageType="{x:Type local:HomeView}"/>
+                    <ui:NavigationViewItem x:Name="alignLeft" Content="菜单二" 
+                                           Icon="{ui:SymbolIcon AlignLeft24}" 
+                                           Tag="Statistics"
+                                           TargetPageType="{x:Type local:StatisticsView}"/>
+                    <ui:NavigationViewItem x:Name="alertBadge" Content="菜单三" 
+                                           Icon="{ui:SymbolIcon AlertBadge24}" 
+                                           Tag="Alerts" TargetPageType="{x:Type local:AlertsView}"/>
+                    <ui:NavigationViewItem Content="菜单四" Icon="{ui:SymbolIcon Library24}" TargetPageType="{x:Type local:ItemsListView}">
+                        <ui:NavigationViewItem.InfoBadge>
+                            <ui:InfoBadge Severity="Success" Value="3" />
+                        </ui:NavigationViewItem.InfoBadge>
+                    </ui:NavigationViewItem>
+                </ui:NavigationView.MenuItems >
+
+                <ui:NavigationView.FooterMenuItems>
+                    <ui:NavigationViewItem
+                        Content="毛玻璃"
+                        Icon="{ui:SymbolIcon ChatHelp24}"
+                        TargetPageType="{x:Type local:BlurView}" />
+                    <ui:NavigationViewItem
+                        Content="菜单六"
+                        Icon="{ui:SymbolIcon People24}"
+                        TargetPageType="{x:Type local:AlertsView}" />
+                    <ui:NavigationViewItem
+                        Content="菜单七"
+                        Icon="{ui:SymbolIcon Settings24}"
+                        TargetPageType="{x:Type local:AlertsView}" />   
+                </ui:NavigationView.FooterMenuItems>
+                
+                <ui:NavigationView.PaneFooter>
+                    <Border
+                        Margin="0,8,0,0"
+                        Background="{DynamicResource StripedBackgroundBrush}"
+                        CornerRadius="4">
+                        <TextBlock
+                            Margin="24"
+                            VerticalAlignment="Center"
+                            FontWeight="Medium"
+                            Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}"
+                            Text="Pane Footer" />
+                    </Border>
+                </ui:NavigationView.PaneFooter>     
+
+            </ui:NavigationView>
+
+            <StackPanel Orientation="Vertical" Grid.Column="1" HorizontalAlignment="Center">
+                <ui:MenuItem Icon="{ui:SymbolIcon Pen20}" />
+                <ui:MenuItem Icon="{ui:SymbolIcon Circle32}" />
+                <ui:MenuItem Icon="{ui:SymbolIcon ArrowBounce24}" />
+                <ui:MenuItem Icon="{ui:SymbolIcon Square24}" />
+                <ui:MenuItem Icon="{ui:SymbolIcon BookSearch20}" />
+                <ui:MenuItem Icon="{ui:SymbolIcon Battery1024}" />
+                <ui:MenuItem Icon="{ui:SymbolIcon BookStar20}" />
+                <ui:MenuItem Icon="{ui:SymbolIcon BookSearch20}" />
+                <ui:MenuItem Icon="{ui:SymbolIcon Battery1024}" />
+                <Separator />
+                <ui:MenuItem Icon="{ui:SymbolIcon BookStar20}" />
+                <ui:MenuItem Icon="{ui:SymbolIcon BookSearch20}" />
+                <ui:MenuItem Icon="{ui:SymbolIcon Battery1024}" />
+                <Separator />
+                <Menu FontSize="14" Grid.Column="1"  HorizontalAlignment="Center">
+                    <MenuItem  Icon="{ui:SymbolIcon DocumentSplitHint20}">
+                        <MenuItem Header="New" />
+                        <MenuItem Header="New window" />
+                        <MenuItem Header="Open..." />
+                        <MenuItem Header="Save" />
+                        <MenuItem Header="Save As..." />
+                        <Separator />
+                        <MenuItem Header="Exit" />
+                    </MenuItem>
+                </Menu>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Grid.Column="2" HorizontalAlignment="Center">
+                <ui:MenuItem Icon="{ui:SymbolIcon BookStar20}" />
+                <ui:MenuItem Icon="{ui:SymbolIcon BookSearch20}" />
+                <ui:MenuItem Icon="{ui:SymbolIcon Battery1024}" />
+                <ui:MenuItem Icon="{ui:SymbolIcon BookStar20}" />
+                <ui:MenuItem Icon="{ui:SymbolIcon BookSearch20}" />
+                <ui:MenuItem Icon="{ui:SymbolIcon Battery1024}" />
+                <Separator />
+                <ui:MenuItem Icon="{ui:SymbolIcon BookStar20}" />
+                <ui:MenuItem Icon="{ui:SymbolIcon BookSearch20}" />
+                <ui:MenuItem Icon="{ui:SymbolIcon Battery1024}" />
+                <Separator />
+                <Menu FontSize="14" Grid.Column="1"  HorizontalAlignment="Center">
+                    <MenuItem  Icon="{ui:SymbolIcon DocumentSplitHint20}">
+                        <MenuItem Header="New" />
+                        <MenuItem Header="New window" />
+                        <MenuItem Header="Open..." />
+                        <MenuItem Header="Save" />
+                        <MenuItem Header="Save As..." />
+                        <Separator />
+                        <MenuItem Header="Exit" />
+                    </MenuItem>
+                </Menu>
+            </StackPanel>
+        </Grid>
+
+        <!-- Bottom Row: Placeholder for future content -->
+        <Grid Grid.Row="2" Margin="8">
+            <Menu FontSize="14"  Grid.Row="0">
+                <ui:MenuItem Header="File" Icon="{ui:SymbolIcon DocumentSplitHint20}">
+                    <ui:MenuItem Header="File" Icon="{ui:SymbolIcon DocumentSplitHint20}">
+                        <MenuItem Header="New" />
+                        <MenuItem Header="New window" />
+                        <MenuItem Header="Open..." />
+                        <MenuItem Header="Save" />
+                        <MenuItem Header="Save As..." />
+                        <Separator />
+                        <MenuItem Header="Exit" />
+                    </ui:MenuItem>
+                    <ui:MenuItem Header="File" Icon="{ui:SymbolIcon DocumentSplitHint20}">
+                        <MenuItem Header="New" />
+                        <MenuItem Header="New window" />
+                        <MenuItem Header="Open..." />
+                        <MenuItem Header="Save" />
+                        <MenuItem Header="Save As..." />
+                        <Separator />
+                        <MenuItem Header="Exit" />
+                    </ui:MenuItem>
+                    <MenuItem Header="Open..." />
+                    <MenuItem Header="Save" />
+                    <MenuItem Header="Save As..." />
+                    <Separator />
+                    <MenuItem Header="Exit" />
+                </ui:MenuItem>
+                <ui:MenuItem Header="Edit" Icon="{ui:SymbolIcon DocumentEdit20}">
+                    <MenuItem Header="Undo" />
+                    <Separator />
+                    <MenuItem Header="Cut" />
+                    <MenuItem Header="Copy" />
+                    <MenuItem Header="Paste" />
+                    <MenuItem IsEnabled="False" />
+                    <Separator />
+                    <MenuItem Header="Search with browser" />
+                    <MenuItem Header="Find..." />
+                    <MenuItem Header="Find next" />
+                    <Separator />
+                    <MenuItem Header="Select All" />
+                </ui:MenuItem>
+                <ui:MenuItem Header="File" Icon="{ui:SymbolIcon DocumentSplitHint20}">
+                    <MenuItem Header="New" />
+                    <MenuItem Header="New window" />
+                    <MenuItem Header="Open..." />
+                    <MenuItem Header="Save" />
+                    <MenuItem Header="Save As..." />
+                    <Separator />
+                    <MenuItem Header="Exit" />
+                </ui:MenuItem>
+                <ui:MenuItem Header="Edit" Icon="{ui:SymbolIcon DocumentEdit20}">
+                    <MenuItem Header="Undo" />
+                    <Separator />
+                    <MenuItem Header="Cut" />
+                    <MenuItem Header="Copy" />
+                    <MenuItem Header="Paste" />
+                    <MenuItem IsEnabled="False" />
+                    <Separator />
+                    <MenuItem Header="Search with browser" />
+                    <MenuItem Header="Find..." />
+                    <MenuItem Header="Find next" />
+                    <Separator />
+                    <MenuItem Header="Select All" />
+                </ui:MenuItem>
+                <ui:MenuItem Header="File" Icon="{ui:SymbolIcon DocumentSplitHint20}">
+                    <MenuItem Header="New" />
+                    <MenuItem Header="New window" />
+                    <MenuItem Header="Open..." />
+                    <MenuItem Header="Save" />
+                    <MenuItem Header="Save As..." />
+                    <Separator />
+                    <MenuItem Header="Exit" />
+                </ui:MenuItem>
+                <ui:MenuItem Header="Edit" Icon="{ui:SymbolIcon DocumentEdit20}">
+                    <MenuItem Header="Undo" />
+                    <Separator />
+                    <MenuItem Header="Cut" />
+                    <MenuItem Header="Copy" />
+                    <MenuItem Header="Paste" />
+                    <MenuItem IsEnabled="False" />
+                    <Separator />
+                    <MenuItem Header="Search with browser" />
+                    <MenuItem Header="Find..." />
+                    <MenuItem Header="Find next" />
+                    <Separator />
+                    <MenuItem Header="Select All" />
+                </ui:MenuItem>
+                <ui:MenuItem Header="File" Icon="{ui:SymbolIcon DocumentSplitHint20}">
+                    <MenuItem Header="New" />
+                    <MenuItem Header="New window" />
+                    <MenuItem Header="Open..." />
+                    <MenuItem Header="Save" />
+                    <MenuItem Header="Save As..." />
+                    <Separator />
+                    <MenuItem Header="Exit" />
+                </ui:MenuItem>
+                <Separator />
+                <ui:MenuItem Icon="{ui:SymbolIcon TextBold20}" />
+                <ui:MenuItem Icon="{ui:SymbolIcon TextItalic20}" />
+                <ui:MenuItem Icon="{ui:SymbolIcon TextUnderline20}" />
+            </Menu>
+        </Grid>
+    </Grid>
+</Window>
