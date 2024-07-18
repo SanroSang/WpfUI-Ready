@@ -29,6 +29,7 @@
         Margin="8"
         CornerRadius="8" >
             <TabControl Margin="5" >
+
                 <TabItem >
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
@@ -37,7 +38,6 @@
                         </StackPanel>
                     </TabItem.Header>
                     <Grid >
-                        <ui:Button Content="弹出" Icon="{ui:SymbolIcon CursorClick24}" Click="Button_Click" HorizontalAlignment="Center"/>
                         
                         <ui:InfoBar Severity="Success" IsOpen="True" IsClosable="True" IsEnabled="True"  Title="Title" 
                                     Message="我在这里！看见我了吗？" VerticalAlignment="Bottom"/>
@@ -47,16 +47,14 @@
                             Value="4.5"/>
                         
                         <ToggleButton  Content="已开启" IsEnabled="True"  VerticalAlignment="Center"  Margin="172"/>
-
-                       
-
                     </Grid>
                 </TabItem>
+
                 <TabItem >
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
                             <ui:SymbolIcon Margin="0,0,6,0" Symbol="StoreMicrosoft16" />
-                            <TextBlock Text="Tab3" />
+                            <TextBlock Text="Tab2" />
                         </StackPanel>
                     </TabItem.Header>
                     <Grid >
@@ -66,7 +64,6 @@
                     Content="Pick a date"
                     Date="2024/2/2"
                     IsTodayHighlighted="True"  HorizontalAlignment="Center"/>
-
                         <ui:TextBlock
                     Margin="288,0,0,0"
                     VerticalAlignment="Center"
@@ -74,17 +71,22 @@
                     Text="{Binding ElementName=CalendarDatePicker, Path=Date}" />
                     </Grid>
                 </TabItem>
-                <TabItem IsSelected="True">
+
+                
+
+                <TabItem  >
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
                             <ui:SymbolIcon Margin="0,0,6,0" Symbol="StoreMicrosoft16" />
-                            <TextBlock Text="Tab4" />
+                            <TextBlock Text="Tab10" Margin="0,4,0,0"/>
+                            <ui:Button  Name="TabPin" Appearance="Transparent" Icon="{ui:SymbolIcon Pin24}" BorderThickness="0" Click="TabPin_Click"/>
                         </StackPanel>
                     </TabItem.Header>
-                    <Grid >
+                    <Grid>
 
                     </Grid>
                 </TabItem>
+
             </TabControl>
             
           

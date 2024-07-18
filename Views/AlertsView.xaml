@@ -24,8 +24,8 @@
         Grid.RowSpan="2"
         Grid.Column="0"
         Margin="8"
-        Background="#e8e8e8"
-        CornerRadius="8">
+        CornerRadius="8" 
+        BorderThickness="2" BorderBrush="#686767">
             <ui:Image CornerRadius="4" BorderBrush="#33000000" Height="700" Source="/Resources/img/test1.png" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="15"/>
         </Border>
         
@@ -34,9 +34,9 @@
         Grid.RowSpan="2"
         Grid.Column="1"
         Margin="8"
-        Background="#e8e8e8"
-        CornerRadius="8" >
-            <ui:Image CornerRadius="4" BorderBrush="#33000000" Height="700" Source="/Resources/img/test2.png" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="15"/>
+        CornerRadius="8" 
+        BorderThickness="2" BorderBrush="#686767">
+            <ui:Image CornerRadius="4" BorderThickness="0" BorderBrush="#686767" Height="700" Source="/Resources/img/test2.png" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="15"/>
         </Border>
     </Grid>
 </UserControl>

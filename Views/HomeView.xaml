@@ -26,7 +26,7 @@
         <Border x:Name="Border1" Grid.Row="0" Grid.Column="1" Margin="5"  BorderBrush="#ffffff" BorderThickness="3" CornerRadius="8">
             <Grid>
                 <ui:Image x:Name="Image1" CornerRadius="4" BorderBrush="#33000000" Height="1200" Source="/Resources/img/test1.png" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5"/>
-                <ui:Button x:Name="Image1_btn" Content="" Background="#f1f1f1" BorderThickness="0" Icon="{ui:SymbolIcon FullScreenMaximize24}" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0" Click="FullScreenButton_Click"/>
+                <ui:Button x:Name="Image1_btn" Content=""  BorderThickness="0" Icon="{ui:SymbolIcon FullScreenMaximize24}" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0" Click="FullScreenButton_Click"/>
             </Grid>
             <Border.Effect >
                 <DropShadowEffect ShadowDepth="0" BlurRadius="2" Color="Black" Opacity="0.3"/>
@@ -37,9 +37,9 @@
             <Grid>
                 <ui:ProgressRing IsIndeterminate="True" Panel.ZIndex="2"/>
                 <ui:Image x:Name="Image2" CornerRadius="4" BorderBrush="#33000000" Height="1200" Source="/Resources/img/test2.png" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5"/>
-                <ui:Button x:Name="Image2_btn" Content="" Background="#f1f1f1" BorderThickness="0" Icon="{ui:SymbolIcon FullScreenMaximize24}" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0" Click="FullScreenButton_Click"/>
-                <ui:Button x:Name="Image2_btn_lock" Content="" Background="#f1f1f1" BorderThickness="0" Icon="{ui:SymbolIcon DocumentLock24}" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,35,0,0" />
-                <ui:Button x:Name="Image2_btn_lock2" Content="" Background="#f1f1f1" BorderThickness="0" Icon="{ui:SymbolIcon HandWave24}" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,70,0,0" />
+                <ui:Button x:Name="Image2_btn" Content=""  BorderThickness="0" Icon="{ui:SymbolIcon FullScreenMaximize24}" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0" Click="FullScreenButton_Click"/>
+                <ui:Button x:Name="Image2_btn_lock" Content=""  BorderThickness="0" Icon="{ui:SymbolIcon DocumentLock24}" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,35,0,0" />
+                <ui:Button x:Name="Image2_btn_lock2" Content=""  BorderThickness="0" Icon="{ui:SymbolIcon HandWave24}" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,70,0,0" />
             </Grid>
             <Border.Effect >
                 <DropShadowEffect ShadowDepth="0" BlurRadius="2" Color="Black" Opacity="0.3"/>
@@ -49,7 +49,7 @@
         <Border x:Name="Border3" Grid.Row="1" Grid.Column="0" Margin="5"  BorderBrush="#ffffff" BorderThickness="3" CornerRadius="8">
             <Grid>
                 <ui:Image x:Name="Image3" CornerRadius="4" BorderBrush="#33000000" Height="1200" Source="/Resources/img/test3.png" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5"/>
-                <ui:Button x:Name="Image3_btn" Content="" Background="#f1f1f1" BorderThickness="0" Icon="{ui:SymbolIcon FullScreenMaximize24}" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0" Click="FullScreenButton_Click"/>
+                <ui:Button x:Name="Image3_btn" Content=""  BorderThickness="0" Icon="{ui:SymbolIcon FullScreenMaximize24}" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0" Click="FullScreenButton_Click"/>
             </Grid>
             <Border.Effect >
                 <DropShadowEffect ShadowDepth="0" BlurRadius="2" Color="Black" Opacity="0.3"/>
@@ -59,7 +59,7 @@
         <Border x:Name="Border4" Grid.Row="1" Grid.Column="1" Margin="5" BorderBrush="#ffffff" BorderThickness="3" CornerRadius="8">
             <Grid>
                 <ui:Image x:Name="Image4" CornerRadius="4" BorderBrush="#33000000" Height="1200" Source="/Resources/img/test4.png" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" />
-                <ui:Button x:Name="Image4_btn" Content="" Background="#f1f1f1" BorderThickness="0" Icon="{ui:SymbolIcon FullScreenMaximize24}" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0" Click="FullScreenButton_Click"/>
+                <ui:Button x:Name="Image4_btn" Content=""  BorderThickness="0" Icon="{ui:SymbolIcon FullScreenMaximize24}" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0" Click="FullScreenButton_Click"/>
             </Grid>
             <Border.Effect >
                 <DropShadowEffect ShadowDepth="0" BlurRadius="2" Color="Black" Opacity="0.3"/>

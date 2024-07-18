@@ -1,4 +1,4 @@
-﻿<Window x:Class="WpfApp3.MainWindow"
+﻿<Window x:Class="WpfApp3.MainWindowView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -9,16 +9,15 @@
         Icon="/Resources/img/icon.ico"
         d:DataContext="{d:DesignInstance local:MainViewModel,IsDesignTimeCreatable=False}"
         ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
-        ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
         Foreground="{DynamicResource TextFillColorPrimaryBrush}"
         Title="xxxx智能分析仪 Version1.2.0" Height="760" Width="1200" 
-        >
+        WindowStyle="None">
 
     <WindowChrome.WindowChrome>
-        <WindowChrome CaptionHeight="10" ResizeBorderThickness="10"  />
+        <WindowChrome CaptionHeight="15" ResizeBorderThickness="10"  />
     </WindowChrome.WindowChrome>
 
-    <Grid >
+    <Grid Background="{DynamicResource ApplicationBackgroundBrush}">
         <!-- Top Row: Placeholders for future content -->
         <Grid.RowDefinitions >
             <RowDefinition Height="Auto"/>
@@ -33,15 +32,18 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <Menu FontSize="14"  Grid.Row="0" HorizontalAlignment="Right" Margin="8,8,15,0">
-                <ui:MenuItem Icon="{ui:SymbolIcon Subtract24}"  Margin="0,0,5,0"  Click="Mini_Click"/>
-                <ui:MenuItem Icon="{ui:SymbolIcon Square32}"  Name="MaxOrNormalButton"  Margin="0,0,5,0" Click="MaxOrNormal_Click"/>
-                <ui:MenuItem Icon="{ui:SymbolIcon Dismiss12}"  Click="Close_Click"/>
+            <Menu FontSize="14"  Grid.Row="0" HorizontalAlignment="Right" Margin="8,5,15,0">
+                <!--<ui:AutoSuggestBox PlaceholderText="搜索..."  Width="140" Margin="0,0,0,0" />-->
+                <ui:MenuItem Icon="{ui:SymbolIcon WeatherSunny24 }" Name="ThemeIcon" Width="45" Height="45"  Margin="0,0,5,0"    Click="SwitchLightOrDark_Click"/>
+                <ui:MenuItem Icon="{ui:SymbolIcon Subtract24}" Width="45" Height="45"  Margin="0,0,5,0"    Click="Mini_Click"/>
+                <ui:MenuItem Icon="{ui:SymbolIcon SquareMultiple32}" Width="45" Name="MaxOrNormalButton" Margin="0,0,5,0" Click="MaxOrNormal_Click"/>
+                <ui:MenuItem Icon="{ui:SymbolIcon Dismiss12}" Width="45"  Click="Close_Click"/>
             </Menu>
             
             <Menu FontSize="14"  Grid.Row="1" HorizontalAlignment="Left" Margin="8,-45,0,0">
-                <ui:MenuItem Header="文件" Icon="{ui:SymbolIcon DocumentSplitHint20}">
-                    <ui:MenuItem Header="编辑" Icon="{ui:SymbolIcon DocumentEdit20}">
+                <ui:Image Source="/Resources/img/icon.ico" Width="20" Margin="-10,-3,-5,0"/>
+                <ui:MenuItem Header="文件" Icon="{ui:SymbolIcon DocumentSplitHint20}"  Margin="-10,0,0,0">
+                    <ui:MenuItem Header="编辑" Icon="{ui:SymbolIcon DocumentEdit20}" >
                         <MenuItem Header="Undo" />
                         <Separator />
                         <MenuItem Header="Cut" />
@@ -55,7 +57,7 @@
                         <Separator />
                         <MenuItem Header="Select All" />
                     </ui:MenuItem>
-                    <ui:MenuItem Header="编辑" Icon="{ui:SymbolIcon DocumentEdit20}">
+                    <ui:MenuItem Header="编辑" Icon="{ui:SymbolIcon DocumentEdit20}" >
                         <MenuItem Header="Undo" />
                         <Separator />
                         <MenuItem Header="Cut" />
@@ -74,7 +76,7 @@
                     <Separator />
                     <MenuItem Header="Exit" />
                 </ui:MenuItem>
-                <ui:MenuItem Header="编辑" Icon="{ui:SymbolIcon DocumentEdit20}">
+                <ui:MenuItem Header="编辑" Icon="{ui:SymbolIcon DocumentEdit20}" >
                     <MenuItem Header="Undo" />
                     <Separator />
                     <MenuItem Header="Cut" />
@@ -88,7 +90,7 @@
                     <Separator />
                     <MenuItem Header="Select All" />
                 </ui:MenuItem>
-                <ui:MenuItem Header="视图" Icon="{ui:SymbolIcon WindowSettings20}">
+                <ui:MenuItem Header="视图" Icon="{ui:SymbolIcon WindowSettings20}" >
                     <MenuItem Header="New" />
                     <MenuItem Header="New window" />
                     <MenuItem Header="Open..." />
@@ -97,7 +99,7 @@
                     <Separator />
                     <MenuItem Header="Exit" />
                 </ui:MenuItem>
-                <ui:MenuItem Header="工具" Icon="{ui:SymbolIcon DocumentEdit20}">
+                <ui:MenuItem Header="工具" Icon="{ui:SymbolIcon DocumentEdit20}" >
                     <MenuItem Header="Undo" />
                     <Separator />
                     <MenuItem Header="Cut" />
@@ -111,7 +113,7 @@
                     <Separator />
                     <MenuItem Header="Select All" />
                 </ui:MenuItem>
-                <ui:MenuItem Header="扩展" Icon="{ui:SymbolIcon DocumentSplitHint20}">
+                <ui:MenuItem Header="扩展" Icon="{ui:SymbolIcon DocumentSplitHint20}" >
                     <MenuItem Header="New" />
                     <MenuItem Header="New window" />
                     <MenuItem Header="Open..." />
@@ -120,7 +122,7 @@
                     <Separator />
                     <MenuItem Header="Exit" />
                 </ui:MenuItem>
-                <ui:MenuItem Header="窗口" Icon="{ui:SymbolIcon DocumentEdit20}">
+                <ui:MenuItem Header="窗口" Icon="{ui:SymbolIcon DocumentEdit20}" >
                     <MenuItem Header="Undo" />
                     <Separator />
                     <MenuItem Header="Cut" />
@@ -134,7 +136,7 @@
                     <Separator />
                     <MenuItem Header="Select All" />
                 </ui:MenuItem>
-                <ui:MenuItem Header="授权" Icon="{ui:SymbolIcon DocumentSplitHint20}">
+                <ui:MenuItem Header="授权" Icon="{ui:SymbolIcon DocumentSplitHint20}" >
                     <MenuItem Header="New" />
                     <MenuItem Header="New window" />
                     <MenuItem Header="Open..." />
@@ -143,7 +145,7 @@
                     <Separator />
                     <MenuItem Header="Exit" />
                 </ui:MenuItem>
-                <ui:MenuItem Header="官网" Icon="{ui:SymbolIcon DocumentEdit20}">
+                <ui:MenuItem Header="官网" Icon="{ui:SymbolIcon DocumentEdit20}" >
                     <MenuItem Header="Undo" />
                     <Separator />
                     <MenuItem Header="Cut" />
@@ -157,29 +159,28 @@
                     <Separator />
                     <MenuItem Header="Select All" />
                 </ui:MenuItem>
-                <ui:MenuItem Header="售后" Icon="{ui:SymbolIcon DocumentSplitHint20}">
-                    <MenuItem Header="New" />
-                    <MenuItem Header="New window" />
-                    <MenuItem Header="Open..." />
-                    <MenuItem Header="Save" />
-                    <MenuItem Header="Save As..." />
+                <ui:MenuItem Header="售后" Icon="{ui:SymbolIcon DocumentSplitHint20}" >
+                    <MenuItem Header="New" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}" />
+                    <MenuItem Header="New window" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}"/>
+                    <MenuItem Header="Open..." Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}"/>
+                    <MenuItem Header="Save" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}"/>
+                    <MenuItem Header="Save As..." Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}"/>
                     <Separator />
-                    <MenuItem Header="Exit" />
+                    <MenuItem Header="Exit" Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}"/>
                 </ui:MenuItem>
                
                 <Separator />
-                <ui:MenuItem Icon="{ui:SymbolIcon TextBold20}" />
-                <ui:MenuItem Icon="{ui:SymbolIcon TextItalic20}" />
-                <ui:MenuItem Icon="{ui:SymbolIcon TextUnderline20}" />
-                <ui:MenuItem Icon="{ui:SymbolIcon BookStar20}" />
-             
+                <!--<ui:MenuItem Icon="{ui:SymbolIcon PanelLeft24}"  Click="PanelLeft_Click"/>
+                <ui:MenuItem Icon="{ui:SymbolIcon PanelLeftContract24}" Click="PanelLeftFluent_Click"/>
+                <ui:MenuItem Icon="{ui:SymbolIcon PanelTopContract20}" Click="PanelTop_Click"/>
+                <ui:MenuItem Icon="{ui:SymbolIcon PanelTopExpand20}" Click="PanelBottom_Click"/>-->
+               
             </Menu>
 
-            <Menu FontSize="14"  Grid.Row="2" Margin="8,0,0,0">
+            <Menu FontSize="14"  Grid.Row="2" Margin="0,-15,0,0">
                 <ui:MenuItem Icon="{ui:SymbolIcon BookStar20}" />
                 <ui:MenuItem Icon="{ui:SymbolIcon BookSearch20}" />
                 <ui:MenuItem Icon="{ui:SymbolIcon Battery1024}" />
-                <Separator />
 
                 <ui:MenuItem Icon="{ui:SymbolIcon BookStar20}" />
                 <ui:MenuItem Icon="{ui:SymbolIcon BookSearch20}" />
@@ -200,14 +201,15 @@
         </Grid>
 
         <!-- Middle Row: NavigationView -->
-        <Grid Grid.Row="1" Margin="8">
+        <Grid Grid.Row="1" Margin="8" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="50" />
                 <ColumnDefinition Width="50" />
             </Grid.ColumnDefinitions>
 
-            <ui:NavigationView IsBackButtonVisible="Visible" PaneTitle="菜单" 
+            <!--PanelLeftContract24   PanelBottomContract24 PanelTopContract24  LeftMinimal LeftFluent-->
+            <ui:NavigationView Name="MainNavigationView" IsBackButtonVisible="Visible" PaneTitle="菜单" 
                                PaneDisplayMode="Left" Grid.Column="0" Margin="0,0,0,0">
                 
                 <!--<ui:NavigationView.Header>
@@ -239,21 +241,24 @@
                     </Border>
                 </ui:NavigationView.PaneHeader>
 
-                <ui:NavigationView.MenuItems>
-                    <ui:AutoSuggestBox PlaceholderText="搜索..." Margin="0,10,0,10" />
-                    <Separator />
+                <ui:NavigationView.MenuItems >
                     <ui:NavigationViewItem x:Name="home" Content="菜单一" 
                                            Icon="{ui:SymbolIcon Home24}" 
                                            Tag="Home" Margin="0,0,0,0" 
-                                           TargetPageType="{x:Type local:HomeView}"/>
+                                           TargetPageType="{x:Type local:HomeView}"
+                                         />
                     <ui:NavigationViewItem x:Name="alignLeft" Content="菜单二" 
                                            Icon="{ui:SymbolIcon AlignLeft24}" 
                                            Tag="Statistics"
-                                           TargetPageType="{x:Type local:StatisticsView}"/>
+                                           TargetPageType="{x:Type local:StatisticsView}"
+                                          />
                     <ui:NavigationViewItem x:Name="alertBadge" Content="菜单三" 
                                            Icon="{ui:SymbolIcon AlertBadge24}" 
-                                           Tag="Alerts" TargetPageType="{x:Type local:AlertsView}"/>
-                    <ui:NavigationViewItem Content="菜单四" Icon="{ui:SymbolIcon Library24}" TargetPageType="{x:Type local:ItemsListView}">
+                                           Tag="Alerts" TargetPageType="{x:Type local:AlertsView}"
+                                           />
+                    <ui:NavigationViewItem Content="菜单四" Icon="{ui:SymbolIcon Library24}" 
+                                           TargetPageType="{x:Type local:ItemsListView}"
+                                           >
                         <ui:NavigationViewItem.InfoBadge>
                             <ui:InfoBadge Severity="Success" Value="3" />
                         </ui:NavigationViewItem.InfoBadge>
@@ -264,15 +269,18 @@
                     <ui:NavigationViewItem
                         Content="毛玻璃"
                         Icon="{ui:SymbolIcon ChatHelp24}"
-                        TargetPageType="{x:Type local:BlurView}" />
+                        TargetPageType="{x:Type local:BlurView}" 
+                        />
                     <ui:NavigationViewItem
                         Content="菜单六"
                         Icon="{ui:SymbolIcon People24}"
-                        TargetPageType="{x:Type local:AlertsView}" />
+                        TargetPageType="{x:Type local:AlertsView}" 
+                        />
                     <ui:NavigationViewItem
                         Content="菜单七"
                         Icon="{ui:SymbolIcon Settings24}"
-                        TargetPageType="{x:Type local:AlertsView}" />   
+                        TargetPageType="{x:Type local:AlertsView}" 
+                        />   
                 </ui:NavigationView.FooterMenuItems>
                 
                 <ui:NavigationView.PaneFooter>
@@ -348,7 +356,7 @@
         <!-- Bottom Row: Placeholder for future content -->
         <Grid Grid.Row="2" Margin="8">
             <Menu FontSize="14"  Grid.Row="0">
-                <ui:MenuItem Header="File" Icon="{ui:SymbolIcon DocumentSplitHint20}">
+                <ui:MenuItem Header="File" Icon="{ui:SymbolIcon DocumentSplitHint20}" Foreground="{DynamicResource TextFillColorPrimaryBrush}">
                     <ui:MenuItem Header="File" Icon="{ui:SymbolIcon DocumentSplitHint20}">
                         <MenuItem Header="New" />
                         <MenuItem Header="New window" />
@@ -358,7 +366,7 @@
                         <Separator />
                         <MenuItem Header="Exit" />
                     </ui:MenuItem>
-                    <ui:MenuItem Header="File" Icon="{ui:SymbolIcon DocumentSplitHint20}">
+                    <ui:MenuItem Header="File" Icon="{ui:SymbolIcon DocumentSplitHint20}" Foreground="{DynamicResource TextFillColorPrimaryBrush}">
                         <MenuItem Header="New" />
                         <MenuItem Header="New window" />
                         <MenuItem Header="Open..." />
@@ -373,7 +381,7 @@
                     <Separator />
                     <MenuItem Header="Exit" />
                 </ui:MenuItem>
-                <ui:MenuItem Header="Edit" Icon="{ui:SymbolIcon DocumentEdit20}">
+                <ui:MenuItem Header="Edit" Icon="{ui:SymbolIcon DocumentEdit20}" Foreground="{DynamicResource TextFillColorPrimaryBrush}">
                     <MenuItem Header="Undo" />
                     <Separator />
                     <MenuItem Header="Cut" />
